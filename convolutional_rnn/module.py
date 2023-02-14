@@ -521,7 +521,7 @@ class Conv3dLSTM(ConvNdRNNBase):
             batch_first=batch_first,
             dropout=dropout,
             bidirectional=bidirectional,
-            convndim=0,
+            convndim=3,
             stride=stride,
             dilation=dilation,
             groups=groups)
