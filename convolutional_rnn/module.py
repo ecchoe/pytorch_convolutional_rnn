@@ -98,7 +98,8 @@ class ConvNdRNNBase(torch.nn.Module):
 
     def check_forward_args(self, input, hidden, batch_sizes):
         is_input_packed = batch_sizes is not None
-        expected_input_dim = (2 if is_input_packed else 3) + self.convndim
+#         expected_input_dim = (2 if is_input_packed else 3) + self.convndim
+        expected_input_dim = self.convndim
         if input.dim() != expected_input_dim:
             raise RuntimeError(
                 'input must have {} dimensions, got {}'.format(
